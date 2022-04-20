@@ -1,0 +1,24 @@
+# Default project settings
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json
+    min-response-size: 1024
+  servlet:
+    context-path: /positiveteam
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/positiveteam_db
+    username: postgres
+    password: postgres
+  application:
+    name: telegram-bot
+    version: $version
+  liquibase:
+    change-log: classpath:/liquibase/root-changelog.xml
+    default-schema: telegram-bot-schema
+    liquibase-schema: telegram-bot-schema
+  jackson:
+    default-property-inclusion: non_null
